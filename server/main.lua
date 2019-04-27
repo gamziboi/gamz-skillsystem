@@ -19,7 +19,7 @@ ESX.RegisterServerCallback("gamz-skillsystem:fetchStatus", function(source, cb)
      ]]
 
      MySQL.Async.fetchScalar(fetch, {
-          ["identifier"] = user.identifier
+          ["@identifier"] = user.identifier
 
      }, function(status)
           local status = json.decode(status)
