@@ -9,8 +9,7 @@
 - Skills displays in ESC -> Stats -> Skills
 - All the skills that is added by default have a unique "function", for example if you run your stamina will increase by the time.
 - Depending on the skill level your character will perform the skill better, for example if your stamina is high you can run longer without getting exhausted.
-- Each ``Config.UpdateFrequency`` (seconds) it will remove the current ``RemoveAmount`` for that skill.
-- Exported functions to update the skill levels.
+- Every ``Config.UpdateFrequency`` (seconds) it will remove the current ``RemoveAmount`` for that skill.
 
 ### [ Installation ]
 - Download the resource and drop it to your resource folder.
