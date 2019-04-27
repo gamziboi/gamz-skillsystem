@@ -17,8 +17,6 @@ Citizen.CreateThread(function()
 		local seconds = Config.UpdateFrequency * 1000
 		Citizen.Wait(seconds)
 
-		RefreshSkills()
-
 		for skill, value in pairs(Config.Skills) do
 			UpdateSkill(skill, value["RemoveAmount"])
 		end

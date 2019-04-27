@@ -9,7 +9,8 @@ FetchSkills = function()
                 end
             end
 		end
-	end)
+        RefreshSkills()
+    end)
 end
 
 SkillMenu = function()
@@ -41,15 +42,14 @@ GetCurrentSkill = function(skill)
 end
 
 UpdateSkill = function(skill, amount)
-    local SkillAmount = Config.Skills[skill]["Current"]
 
-
-    if Config.Notifications then
-        if tonumber(amount) > 0 then
-            Notification("~g~+" .. amount .. "% ~s~" .. skill)
-        end
+    if not Config.Skills[skill] then
+        print("Skill " .. skill .. " doesn't exist")
+        return
     end
 
+    local SkillAmount = Config.Skills[skill]["Current"]
+    
     if SkillAmount + tonumber(amount) < 0 then
         Config.Skills[skill]["Current"] = 0
     elseif SkillAmount + tonumber(amount) > 99 then
@@ -57,9 +57,16 @@ UpdateSkill = function(skill, amount)
     else
         Config.Skills[skill]["Current"] = SkillAmount + tonumber(amount)
     end
-
+    
     RefreshSkills()
+
+    if Config.Notifications then
+        if tonumber(amount) > 0 then
+            Notification("~g~+" .. amount .. "% ~s~" .. skill)
+        end
+    end
 end
+
 
 function round(num) 
     return math.floor(num+.5) 
