@@ -52,7 +52,7 @@ UpdateSkill = function(skill, amount)
     
     if SkillAmount + tonumber(amount) < 0 then
         Config.Skills[skill]["Current"] = 0
-    elseif SkillAmount + tonumber(amount) > 99 then
+    elseif SkillAmount + tonumber(amount) > 100 then
         Config.Skills[skill]["Current"] = 100
     else
         Config.Skills[skill]["Current"] = SkillAmount + tonumber(amount)
