@@ -65,6 +65,7 @@ UpdateSkill = function(skill, amount)
             Notification("~g~+" .. amount .. "% ~s~" .. skill)
         end
     end
+	TriggerServerEvent("gamz-skillsystem:update", json.encode(Config.Skills))
 end
 
 
