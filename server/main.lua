@@ -22,10 +22,9 @@ ESX.RegisterServerCallback("gamz-skillsystem:fetchStatus", function(source, cb)
           ["@identifier"] = user.identifier
 
      }, function(status)
-          local status = json.decode(status)
           
           if status ~= nil then
-               cb(status)
+               cb(json.decode(status))
           else
                cb(nil)
           end
