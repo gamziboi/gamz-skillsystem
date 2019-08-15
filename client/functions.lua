@@ -1,7 +1,7 @@
 FetchSkills = function()
-    ESX.TriggerServerCallback("gamz-skillsystem:fetchStatus", function(status)
-		if status ~= nil then
-            for status, value in pairs(status) do
+    ESX.TriggerServerCallback("gamz-skillsystem:fetchStatus", function(data)
+		if data then
+            for status, value in pairs(data) do
                 if Config.Skills[status] then
                     Config.Skills[status]["Current"] = value["Current"]
                 else
