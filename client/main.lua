@@ -3,8 +3,10 @@ ESX = nil
 Citizen.CreateThread(function()
 	while ESX == nil do
 		Citizen.Wait(20)
-		
-		ESX = exports["es_extended"]:getSharedObject()
+
+		TriggerEvent('esx:getSharedObject', function(obj)
+			ESX = obj 
+		end)
 	end
 
 	while not ESX.IsPlayerLoaded() do
